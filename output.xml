@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.8 on win32)" generated="2025-01-27T09:10:24.400997" rpa="false" schemaversion="5">
+<suite id="s1" name="Start" source="C:\Users\user\Desktop\Selber\cursoRobotNoesis\Robot_Web\start.robot">
+<test id="s1-t1" name="Logar com User e Password correto, clicar no botão e armazenar evidências" line="47">
+<kw name="Acessar a aplicacao">
+<kw name="Ensure Evidence Folder Exists">
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:24.789097" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:24.788097" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:24.789097" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' already exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:24.789097" elapsed="0.000000"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-01-27T09:10:24.789097" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-01-27T09:10:24.788097" elapsed="0.001000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:24.790092" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--start-maximized")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-27T09:10:24.790092" elapsed="4.522711"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath://input[@name="username"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.312803" elapsed="0.472513"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:29.785316" level="INFO">Typing text 'Admin' into text field 'xpath://input[@name="username"]'.</msg>
+<arg>xpath://input[@name="username"]</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.785316" elapsed="0.095752"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:29.882056" level="INFO">Typing password into text field 'xpath://input[@placeholder="Password"]'.</msg>
+<msg time="2025-01-27T09:10:29.912953" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath://input[@placeholder="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.882056" elapsed="0.104699"/>
+</kw>
+<kw name="Capture Selenium Screenshot">
+<kw name="Ensure Evidence Folder Exists">
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:29.987779" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.987779" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:29.988778" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' already exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.987779" elapsed="0.000999"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.987779" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2025-01-27T09:10:29.987779" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-27T09:10:29.988778" level="INFO">${file_path} = C:/Users/user/Desktop/Selber/Robot_Web/Capture/img/before_click_login.png</msg>
+<var>${file_path}</var>
+<arg>${EVIDENCE_FOLDER}/${screenshot_name}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.988778" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Salvando Screenshot em: ${file_path}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.988778" elapsed="0.000969"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:30.163681" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Robot_Web/Capture/img/before_click_login.png"&gt;&lt;img src="../../Robot_Web/Capture/img/before_click_login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${file_path}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-27T09:10:29.989747" elapsed="0.173934"/>
+</kw>
+<arg>before_click_login</arg>
+<status status="PASS" start="2025-01-27T09:10:29.986755" elapsed="0.176926"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:30.163681" level="INFO">Clicking button 'xpath=//button[text()=' Login ']'.</msg>
+<arg>xpath=//button[text()=' Login ']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-27T09:10:30.163681" elapsed="0.066805"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-27T09:10:40.231434" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-27T09:10:30.230486" elapsed="10.000948"/>
+</kw>
+<kw name="Page Should Contain Image" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:40.247392" level="INFO">Current page contains image '//img[@src="/web/images/orangehrm-logo.png?v=1721393199309"]'.</msg>
+<arg>//img[@src="/web/images/orangehrm-logo.png?v=1721393199309"]</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.231434" elapsed="0.015958"/>
+</kw>
+<kw name="Ensure Evidence Folder Exists">
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:40.248388" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.248388" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:40.249386" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' already exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.248388" elapsed="0.000998"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.248388" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2025-01-27T09:10:40.247392" elapsed="0.001994"/>
+</kw>
+<kw name="Capture Selenium Screenshot">
+<kw name="Ensure Evidence Folder Exists">
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:40.250382" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.249386" elapsed="0.000996"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:40.250382" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' already exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.250382" elapsed="0.000000"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.250382" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2025-01-27T09:10:40.249386" elapsed="0.001994"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-27T09:10:40.251380" level="INFO">${file_path} = C:/Users/user/Desktop/Selber/Robot_Web/Capture/img/selenium-screenshot-before-click.png</msg>
+<var>${file_path}</var>
+<arg>${EVIDENCE_FOLDER}/${screenshot_name}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.251380" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Salvando Screenshot em: ${file_path}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.251380" elapsed="0.000998"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:40.411423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Robot_Web/Capture/img/selenium-screenshot-before-click.png"&gt;&lt;img src="../../Robot_Web/Capture/img/selenium-screenshot-before-click.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${file_path}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.252378" elapsed="0.160043"/>
+</kw>
+<arg>selenium-screenshot-before-click</arg>
+<status status="PASS" start="2025-01-27T09:10:40.249386" elapsed="0.163035"/>
+</kw>
+<kw name="Page Should Contain Image" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:40.423391" level="INFO">Current page contains image '//img[@src="/web/images/orangehrm-logo.png?v=1721393199309"]'.</msg>
+<arg>//img[@src="/web/images/orangehrm-logo.png?v=1721393199309"]</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.412421" elapsed="0.010970"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//img[@src="/web/images/orangehrm-logo.png?v=1721393199309"]</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.423391" elapsed="0.014657"/>
+</kw>
+<kw name="Capture Selenium Screenshot">
+<kw name="Ensure Evidence Folder Exists">
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:40.439341" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.439079" elapsed="0.000262"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-01-27T09:10:40.440043" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\user\Desktop\Selber\Robot_Web\Capture\img"&gt;C:\Users\user\Desktop\Selber\Robot_Web\Capture\img&lt;/a&gt;' already exists.</msg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.440043" elapsed="0.000000"/>
+</kw>
+<arg>Create Directory</arg>
+<arg>${EVIDENCE_FOLDER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.439341" elapsed="0.000702"/>
+</kw>
+<status status="PASS" start="2025-01-27T09:10:40.438048" elapsed="0.001995"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-27T09:10:40.440043" level="INFO">${file_path} = C:/Users/user/Desktop/Selber/Robot_Web/Capture/img/selenium-screenshot-after-login.png</msg>
+<var>${file_path}</var>
+<arg>${EVIDENCE_FOLDER}/${screenshot_name}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.440043" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Salvando Screenshot em: ${file_path}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.440043" elapsed="0.000997"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:40.593162" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Robot_Web/Capture/img/selenium-screenshot-after-login.png"&gt;&lt;img src="../../Robot_Web/Capture/img/selenium-screenshot-after-login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${file_path}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.441040" elapsed="0.152122"/>
+</kw>
+<arg>selenium-screenshot-after-login</arg>
+<status status="PASS" start="2025-01-27T09:10:40.438048" elapsed="0.156091"/>
+</kw>
+<status status="PASS" start="2025-01-27T09:10:24.787068" elapsed="15.807071"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:40.594139" level="INFO">Clicking link '//a[@href='/web/index.php/admin/viewAdminModule']'.</msg>
+<arg>//a[@href='/web/index.php/admin/viewAdminModule']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-27T09:10:40.594139" elapsed="0.628003"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-27T09:10:44.223694" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-27T09:10:41.222142" elapsed="3.001552"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-27T09:10:44.251627" level="INFO">Element '//h6[text()='User Management']' is displayed.</msg>
+<arg>//h6[text()='User Management']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-27T09:10:44.223694" elapsed="0.027933"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-27T09:10:44.252634" elapsed="2.609118"/>
+</kw>
+<tag>Logar</tag>
+<status status="PASS" start="2025-01-27T09:10:24.786200" elapsed="22.077563"/>
+</test>
+<test id="s1-t2" name="Analisando Variaveis" line="56">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${login}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-27T09:10:46.869729" elapsed="0.001011"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Dias_da_semana[6]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-27T09:10:46.872688" elapsed="0.002454"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Cadastro.mae}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-01-27T09:10:46.875677" elapsed="0.003241"/>
+</kw>
+<tag>Var</tag>
+<status status="PASS" start="2025-01-27T09:10:46.867701" elapsed="0.011967"/>
+</test>
+<status status="PASS" start="2025-01-27T09:10:24.405986" elapsed="22.475903"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Logar</stat>
+<stat pass="1" fail="0" skip="0">Var</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Start">Start</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
